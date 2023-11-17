@@ -2,6 +2,12 @@
 #SingleInstance Force
 #NoEnv
 
+FolderPath := "C:\temp"
+IfNotExist, %FolderPath%
+{
+    FileCreateDir, %FolderPath%
+}
+
 FileDelete, C:\temp\hook.ini
 Loop, 4 {
     IniWrite, 0, C:\temp\hook.ini, %A_Index%, %A_Index%
